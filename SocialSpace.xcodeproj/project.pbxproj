@@ -38,6 +38,12 @@
 		BED523972162AEA200B67CF2 = {
 			isa = PBXGroup;
 			children = (
+				BED523BA2162AFCC00B67CF2 /* Helpers */,
+				BED523B92162AFB200B67CF2 /* Supporting Files */,
+				BED523B82162AFA500B67CF2 /* Storyboards */,
+				BED523B72162AF9F00B67CF2 /* Models */,
+				BED523B62162AF2500B67CF2 /* Views */,
+				BED523B52162AF1900B67CF2 /* Controllers */,
 				BED523A22162AEA200B67CF2 /* SocialSpace */,
 				BED523A12162AEA200B67CF2 /* Products */,
 			);
@@ -62,6 +68,48 @@
 				BED523AF2162AEA300B67CF2 /* Info.plist */,
 			);
 			path = SocialSpace;
+			sourceTree = "<group>";
+		};
+		BED523B52162AF1900B67CF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BED523B62162AF2500B67CF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BED523B72162AF9F00B67CF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BED523B82162AFA500B67CF2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BED523B92162AFB200B67CF2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BED523BA2162AFCC00B67CF2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
