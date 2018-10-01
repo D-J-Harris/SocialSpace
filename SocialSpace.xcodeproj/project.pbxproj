@@ -12,7 +12,8 @@
 		BED523AB2162AEA300B67CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED523AA2162AEA300B67CF2 /* Assets.xcassets */; };
 		BED523AE2162AEA300B67CF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523AC2162AEA300B67CF2 /* LaunchScreen.storyboard */; };
 		BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523BF2162B7A600B67CF2 /* MembersViewController.swift */; };
-		BED523C22162B9D900B67CF2 /* FetchDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523C12162B9D900B67CF2 /* FetchDataViewController.swift */; };
+		BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */; };
+		BED523C62162C96D00B67CF2 /* Interaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523C52162C96D00B67CF2 /* Interaction.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		BED523AD2162AEA300B67CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BED523AF2162AEA300B67CF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BED523BF2162B7A600B67CF2 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
-		BED523C12162B9D900B67CF2 /* FetchDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDataViewController.swift; sourceTree = "<group>"; };
+		BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
+		BED523C52162C96D00B67CF2 /* Interaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interaction.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				BED523BF2162B7A600B67CF2 /* MembersViewController.swift */,
-				BED523C12162B9D900B67CF2 /* FetchDataViewController.swift */,
+				BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +89,7 @@
 			children = (
 				BED523A72162AEA200B67CF2 /* Main.storyboard */,
 				BED523AC2162AEA300B67CF2 /* LaunchScreen.storyboard */,
+				BED523C52162C96D00B67CF2 /* Interaction.storyboard */,
 				BED523A12162AEA200B67CF2 /* Products */,
 			);
 			path = Storyboards;
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED523AE2162AEA300B67CF2 /* LaunchScreen.storyboard in Resources */,
+				BED523C62162C96D00B67CF2 /* Interaction.storyboard in Resources */,
 				BED523AB2162AEA300B67CF2 /* Assets.xcassets in Resources */,
 				BED523A92162AEA200B67CF2 /* Main.storyboard in Resources */,
 			);
@@ -181,7 +185,7 @@
 			files = (
 				BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */,
 				BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */,
-				BED523C22162B9D900B67CF2 /* FetchDataViewController.swift in Sources */,
+				BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

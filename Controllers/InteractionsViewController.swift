@@ -9,10 +9,18 @@
 import Foundation
 import UIKit
 
-class FetchDataViewController: UIViewController {
+class InteractionsViewController: UIViewController {
+    
+    var username: String = ""
+    @IBOutlet weak var welcomeLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set username based on userDefaults
+        username = UserDefaults.standard.string(forKey: "username") ?? ""
+        welcomeLabel.text = "Welcome back, \(username)"
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

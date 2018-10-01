@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        UserDefaults.standard.register(defaults: ["isUserLoggedIn" : false])
+        configureInitialRootViewController(for: window)
         return true
     }
 
@@ -42,5 +45,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    func configureInitialRootViewController(for window: UIWindow?) {
+        let defaults = UserDefaults.standard
+        let initialViewController: UIViewController
+        
+        if defaults.bool(forKey: "isUserLoggedIn") {
+            let storyboard = UIStoryboard(name: "Interaction", bundle: .main)
+            initialViewController = storyboard.instantiateInitialViewController()!
+        }
+        else {
+            let storyboard = UIStoryboard(name: "Main", bundle: .main)
+            initialViewController = storyboard.instantiateInitialViewController()!
+        }
+        
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+    }
 }
 
