@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserDefaults.standard.register(defaults: ["isUserLoggedIn" : false])
         configureInitialRootViewController(for: window)
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+        }
+        locationManager.requestAlwaysAuthorization()
         return true
     }
 
