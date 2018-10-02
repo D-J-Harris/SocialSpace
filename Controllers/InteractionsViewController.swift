@@ -16,6 +16,7 @@ class InteractionsViewController: UIViewController {
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var pushLocationButton: UIButton!
+    @IBOutlet weak var contactDatabaseButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -39,6 +40,12 @@ class InteractionsViewController: UIViewController {
         
         //display result of current location
         locationLabel.text = "Your location is \(currentLocation)"
+    }
+    
+    @IBAction func contactDatabaseButtonTouched(_ sender: Any) {
+        
+        let databaseService = DatabaseService()
+        databaseService.getLocationValues()
     }
     
 }

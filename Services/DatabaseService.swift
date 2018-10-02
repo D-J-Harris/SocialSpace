@@ -15,12 +15,13 @@ class DatabaseService {
     
     func getLocationValues() {
         
-        Alamofire.request("http:\(ipAddress)").validate().responseJSON { (response) in
+        let param: [String: Any]? = ["port":8000]
+        Alamofire.request("http://\(ipAddress)", method: .get, parameters: param, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             switch response.result {
             case .success:
-                
+                print(response)
             case .failure(let error):
-                
+                print(error)
             }
         }
     }
