@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D09548963F9C2713713F691 /* Pods_SocialSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */; };
 		BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523A32162AEA200B67CF2 /* AppDelegate.swift */; };
 		BED523A92162AEA200B67CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523A72162AEA200B67CF2 /* Main.storyboard */; };
 		BED523AB2162AEA300B67CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED523AA2162AEA300B67CF2 /* Assets.xcassets */; };
@@ -16,9 +17,11 @@
 		BED523C62162C96D00B67CF2 /* Interaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523C52162C96D00B67CF2 /* Interaction.storyboard */; };
 		BED523C82163863600B67CF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523C72163863600B67CF2 /* User.swift */; };
 		BED523CB216389D200B67CF2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523CA216389D200B67CF2 /* LocationService.swift */; };
+		BEEBC2092163E87A0045ACA9 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86F5724B1B9E81B0003214CF /* Pods-SocialSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace.release.xcconfig"; sourceTree = "<group>"; };
 		BED523A02162AEA200B67CF2 /* SocialSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED523A32162AEA200B67CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED523A82162AEA200B67CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +33,9 @@
 		BED523C52162C96D00B67CF2 /* Interaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interaction.storyboard; sourceTree = "<group>"; };
 		BED523C72163863600B67CF2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BED523CA216389D200B67CF2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90AFEE4D934C12A1540708E /* Pods-SocialSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,12 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D09548963F9C2713713F691 /* Pods_SocialSpace.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AE42C14560BE61BF35DA69B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		76F4CCC9A3213DD870617DCA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C90AFEE4D934C12A1540708E /* Pods-SocialSpace.debug.xcconfig */,
+				86F5724B1B9E81B0003214CF /* Pods-SocialSpace.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BED523972162AEA200B67CF2 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +78,8 @@
 				BED523B72162AF9F00B67CF2 /* Models */,
 				BED523B62162AF2500B67CF2 /* Views */,
 				BED523B52162AF1900B67CF2 /* Controllers */,
+				76F4CCC9A3213DD870617DCA /* Pods */,
+				6AE42C14560BE61BF35DA69B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				BED523CA216389D200B67CF2 /* LocationService.swift */,
+				BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -132,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BED523B22162AEA300B67CF2 /* Build configuration list for PBXNativeTarget "SocialSpace" */;
 			buildPhases = (
+				8D6E34D8CC0B09DF47F9C38F /* [CP] Check Pods Manifest.lock */,
 				BED5239C2162AEA200B67CF2 /* Sources */,
 				BED5239D2162AEA200B67CF2 /* Frameworks */,
 				BED5239E2162AEA200B67CF2 /* Resources */,
+				0ABE210D6A79C5D715C9A3CE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,11 +226,51 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0ABE210D6A79C5D715C9A3CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D6E34D8CC0B09DF47F9C38F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SocialSpace-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BED5239C2162AEA200B67CF2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEEBC2092163E87A0045ACA9 /* DatabaseService.swift in Sources */,
 				BED523C82163863600B67CF2 /* User.swift in Sources */,
 				BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */,
 				BED523CB216389D200B67CF2 /* LocationService.swift in Sources */,
@@ -350,6 +419,7 @@
 		};
 		BED523B32162AEA300B67CF2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C90AFEE4D934C12A1540708E /* Pods-SocialSpace.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -368,6 +438,7 @@
 		};
 		BED523B42162AEA300B67CF2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86F5724B1B9E81B0003214CF /* Pods-SocialSpace.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
