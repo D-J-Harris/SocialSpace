@@ -9,14 +9,18 @@
 import Foundation
 import UIKit
 
-class User {
+class User: Codable {
     
     let username: String
     var locationValue: Int
+    var latitude: Double
+    var longitude: Double
     
-    init(username: String) {
+    init(username: String, latitude: Double, longitude: Double) {
         
         self.username = username
+        self.latitude = latitude
+        self.longitude = longitude
         self.locationValue = 0
     }
 }

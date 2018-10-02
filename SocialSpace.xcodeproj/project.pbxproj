@@ -15,6 +15,7 @@
 		BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */; };
 		BED523C62162C96D00B67CF2 /* Interaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523C52162C96D00B67CF2 /* Interaction.storyboard */; };
 		BED523C82163863600B67CF2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523C72163863600B67CF2 /* User.swift */; };
+		BED523CB216389D200B67CF2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523CA216389D200B67CF2 /* LocationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
 		BED523C52162C96D00B67CF2 /* Interaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interaction.storyboard; sourceTree = "<group>"; };
 		BED523C72163863600B67CF2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BED523CA216389D200B67CF2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				BED523A32162AEA200B67CF2 /* AppDelegate.swift */,
+				BED523C9216389C200B67CF2 /* Services */,
 				BED523BA2162AFCC00B67CF2 /* Helpers */,
 				BED523B92162AFB200B67CF2 /* Supporting Files */,
 				BED523B82162AFA500B67CF2 /* Storyboards */,
@@ -114,6 +117,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		BED523C9216389C200B67CF2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BED523CA216389D200B67CF2 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +157,11 @@
 				TargetAttributes = {
 					BED5239F2162AEA200B67CF2 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -188,6 +204,7 @@
 			files = (
 				BED523C82163863600B67CF2 /* User.swift in Sources */,
 				BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */,
+				BED523CB216389D200B67CF2 /* LocationService.swift in Sources */,
 				BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */,
 				BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */,
 			);
