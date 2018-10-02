@@ -9,11 +9,25 @@
 import Foundation
 import CoreLocation
 
-struct LocationService {
+class LocationService {
     
+    //location variables
     var locationManager: CLLocationManager = CLLocationManager()
     
-    func getLocation() {
+    func getLocation() -> (Double, Double) {
         
+        //if authorised, get current location
+        
+        if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() ==  .authorizedAlways){
+            
+            let latitude: Double = locationManager.location!.coordinate.latitude
+            let longitude: Double = locationManager.location!.coordinate.longitude
+            return (latitude, longitude)
+        }
+        else {
+            print("location services not enabled")
+            return (0,0)
+        }
     }
 }

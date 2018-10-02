@@ -16,11 +16,12 @@ class User: Codable {
     var latitude: Double
     var longitude: Double
     
-    init(username: String, latitude: Double, longitude: Double) {
+    init(username: String) {
         
         self.username = username
-        self.latitude = latitude
-        self.longitude = longitude
+        self.latitude = 0
+        self.longitude = 0
+        
         self.locationValue = 0
     }
 }

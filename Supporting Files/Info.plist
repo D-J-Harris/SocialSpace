@@ -46,8 +46,8 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string></string>
+	<string>SocialSpace needs your location to run</string>
 	<key>NSLocationUsageDescription</key>
-	<string></string>
+	<string>SocialSpace needs your location to run</string>
 </dict>
 </plist>

@@ -12,6 +12,7 @@ import UIKit
 class InteractionsViewController: UIViewController {
     
     var username: String = ""
+    var currentLocation: (Double,Double) = (0,0)
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var pushLocationButton: UIButton!
@@ -32,7 +33,12 @@ class InteractionsViewController: UIViewController {
     
     
     @IBAction func pushLocationButtonTapped(_ sender: Any) {
+        //get current location using CoreLocation
+        let locationService = LocationService()
+        currentLocation = locationService.getLocation()
         
+        //display result of current location
+        locationLabel.text = "Your location is \(currentLocation)"
     }
     
 }
