@@ -11,18 +11,25 @@ import Alamofire
 
 class DatabaseService {
     
-    let ipAddress = "82.69.63.203"
+    let ipAddress = "192.168.1.71"
     
     func getLocationValues() {
         
-        let param: [String: Any]? = ["port":8000]
-        Alamofire.request("http://\(ipAddress)", method: .get, parameters: param, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
+        Alamofire.request("http://\(ipAddress):8000/read").validate().responseJSON { (response) in
             switch response.result {
             case .success:
                 print(response)
             case .failure(let error):
                 print(error)
             }
+        }
+    }
+    
+    func postLocationValue(_ locationValue: Int, _ user: User) {
+        
+        let params: [String: Any]? = ["user_id": user.username, "location_value": locationValue]
+        
+        Alamofire.request("http://\(ipAddress):8000/set", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
         }
     }
 }

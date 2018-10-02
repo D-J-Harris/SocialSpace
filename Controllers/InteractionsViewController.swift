@@ -12,11 +12,13 @@ import UIKit
 class InteractionsViewController: UIViewController {
     
     var username: String = ""
+    var user: User = User(username: "somebody")
     var currentLocation: (Double,Double) = (0,0)
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var pushLocationButton: UIButton!
     @IBOutlet weak var contactDatabaseButton: UIButton!
+    @IBOutlet weak var updateLocationButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -24,7 +26,7 @@ class InteractionsViewController: UIViewController {
         
         //set User based on userDefaults
         username = UserDefaults.standard.string(forKey: "username") ?? ""
-        let user = User(username: username)
+        user = User(username: username)
         welcomeLabel.text = "Welcome back, \(user.username)"
         locationLabel.text = "Your location is \(user.locationValue)"
     }
@@ -46,6 +48,11 @@ class InteractionsViewController: UIViewController {
         
         let databaseService = DatabaseService()
         databaseService.getLocationValues()
+    }
+    
+    @IBAction func updateLocationButtonTapped(_ sender: Any) {
+        let databaseService = DatabaseService()
+        databaseService.postLocationValue(user.locationValue, user)
     }
     
 }
