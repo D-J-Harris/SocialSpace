@@ -14,20 +14,27 @@ class LocationService {
     //location variables
     let locationManager = CLLocationManager()
     
-    func getCurrentLocation() -> (Double, Double) {
+    func getCurrentLocation() -> (Double, Double)? {
         
         //if authorised, get current location
         
         if( CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() ==  .authorizedAlways){
             
-            let latitude: Double = locationManager.location!.coordinate.latitude
-            let longitude: Double = locationManager.location!.coordinate.longitude
-            return (latitude, longitude)
+            if let location = locationManager.location {
+                let latitude: Double = location.coordinate.latitude
+                let longitude: Double = location.coordinate.longitude
+                return (latitude, longitude)
+            }
+            else {
+                print("no location found")
+                return nil
+            }
+            
         }
         else {
             print("location services not enabled")
-            return (0,0)
+            return nil
         }
     }
 }

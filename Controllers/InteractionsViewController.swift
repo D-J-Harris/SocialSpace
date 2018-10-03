@@ -12,8 +12,9 @@ import UIKit
 class InteractionsViewController: UIViewController {
     
     //variables and buttons
-    var user: User = User(username: "somebody")
-    var currentLocation: (Double,Double) = (0,0)
+    //set User based on userDefaults
+    let user = User(username: UserDefaults.standard.string(forKey: "username") ?? "")
+    var currentLocation: (Double,Double)?
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -26,8 +27,6 @@ class InteractionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set User based on userDefaults
-        user = User(username: UserDefaults.standard.string(forKey: "username") ?? "")
         welcomeLabel.text = "Welcome back, \(user.username)"
         locationLabel.text = "Your location is \(user.locationValue)"
     }
@@ -42,7 +41,12 @@ class InteractionsViewController: UIViewController {
         currentLocation = locationService.getCurrentLocation()
         
         //display result of current location
-        locationLabel.text = "Your location is \(currentLocation)"
+        if currentLocation != nil {
+            locationLabel.text = "Your location is \(currentLocation!)"
+        }
+        else {
+            print("current location not found")
+        }
     }
     
     @IBAction func contactDatabaseButtonTouched(_ sender: Any) {

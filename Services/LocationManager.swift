@@ -31,10 +31,25 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("new location received")
         
-        if HaversineDistance.haversineDistance(la1: 52.211059, lo1: 0.113483, la2: 51.4545, lo2: 2.5879) > 20 {
-            print("we're in business")
-            print(HaversineDistance.haversineDistance(la1: 52.211059, lo1: 0.113483, la2: 51.4545, lo2: -2.5879))
+        //get location when update is pinged
+        if let location = locationManager.location {
+            let la2 = location.coordinate.latitude
+            let lo2 = location.coordinate.longitude
+            
+            
+            
+            //check if the distance from house is above a threshold
+            if HaversineDistance.haversineDistance(la1: 52.211059, lo1: 0.113483, la2: la2, lo2: lo2) > 20 {
+                
+                let databaseService = DatabaseService()
+                databaseService
+                
+            }
         }
-    
+        else {
+            print("no location found")
+        }
+        
+
     }
 }
