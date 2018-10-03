@@ -12,9 +12,9 @@ import CoreLocation
 class LocationService {
     
     //location variables
-    var locationManager: CLLocationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
-    func getLocation() -> (Double, Double) {
+    func getCurrentLocation() -> (Double, Double) {
         
         //if authorised, get current location
         

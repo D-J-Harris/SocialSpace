@@ -25,9 +25,9 @@ class DatabaseService {
         }
     }
     
-    func postLocationValue(_ locationValue: Int, _ user: User) {
+    func postLocationValue(_ user: User) {
         
-        let params: [String: Any]? = ["user_id": user.username, "location_value": locationValue]
+        let params: [String: Any]? = ["user_id": user.username, "location_value": user.locationValue]
         
         Alamofire.request("http://\(ipAddress):8000/set", method: .post, parameters: params, encoding: URLEncoding.default, headers: nil).validate().responseJSON { (response) in
         }

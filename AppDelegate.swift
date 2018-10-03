@@ -11,19 +11,26 @@ import CoreLocation
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
     let center = UNUserNotificationCenter.current()
-    let locationManager = CLLocationManager()
+    let locationManager = LocationManager()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //set default value of being logged in on userDefaults to false
         UserDefaults.standard.register(defaults: ["isUserLoggedIn" : false])
+        
+        //decide on beginnning storyboard depending on first time launch
         configureInitialRootViewController(for: window)
-        locationManager.requestAlwaysAuthorization()
+        
+        //begin location services
+        locationManager.determineCurrentLocation()
+        
+        //permissions for notifications
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
         }
         return true

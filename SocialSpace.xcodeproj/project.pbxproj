@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7D09548963F9C2713713F691 /* Pods_SocialSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */; };
+		BEB03BF62164DF6B0024741F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03BF52164DF6B0024741F /* LocationManager.swift */; };
+		BEB03BF82164E3180024741F /* HaversineDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03BF72164E3180024741F /* HaversineDistance.swift */; };
 		BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523A32162AEA200B67CF2 /* AppDelegate.swift */; };
 		BED523A92162AEA200B67CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523A72162AEA200B67CF2 /* Main.storyboard */; };
 		BED523AB2162AEA300B67CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED523AA2162AEA300B67CF2 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		86F5724B1B9E81B0003214CF /* Pods-SocialSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace.release.xcconfig"; sourceTree = "<group>"; };
+		BEB03BF52164DF6B0024741F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BEB03BF72164E3180024741F /* HaversineDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaversineDistance.swift; sourceTree = "<group>"; };
 		BED523A02162AEA200B67CF2 /* SocialSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED523A32162AEA200B67CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED523A82162AEA200B67CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				BED523AA2162AEA300B67CF2 /* Assets.xcassets */,
+				BEB03BF72164E3180024741F /* HaversineDistance.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			children = (
 				BED523CA216389D200B67CF2 /* LocationService.swift */,
 				BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */,
+				BEB03BF52164DF6B0024741F /* LocationManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				BEEBC2092163E87A0045ACA9 /* DatabaseService.swift in Sources */,
 				BED523C82163863600B67CF2 /* User.swift in Sources */,
 				BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */,
+				BEB03BF82164E3180024741F /* HaversineDistance.swift in Sources */,
+				BEB03BF62164DF6B0024741F /* LocationManager.swift in Sources */,
 				BED523CB216389D200B67CF2 /* LocationService.swift in Sources */,
 				BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */,
 				BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */,

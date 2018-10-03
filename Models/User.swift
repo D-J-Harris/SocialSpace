@@ -21,7 +21,6 @@ class User: Codable {
         self.username = username
         self.latitude = 0
         self.longitude = 0
-        
         self.locationValue = 0
     }
 }
