@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var window: UIWindow?
     let center = UNUserNotificationCenter.current()
-    let locationManager = LocationManager()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -27,9 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         //decide on beginnning storyboard depending on first time launch
         configureInitialRootViewController(for: window)
-        
-        //begin location services
-        locationManager.determineCurrentLocation()
         
         //permissions for notifications
         center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
@@ -68,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
          */
-        let container = NSPersistentContainer(name: "SocialSpace")
+        let container = NSPersistentContainer(name: "User")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -103,7 +99,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             }
         }
     }
-
 
 }
 

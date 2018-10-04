@@ -11,10 +11,10 @@ import UIKit
 
 class InteractionsViewController: UIViewController {
     
-    //variables and buttons
-    //set User based on userDefaults
-    let user = User(username: UserDefaults.standard.string(forKey: "username") ?? "")
+    
     var currentLocation: (Double,Double)?
+    let user = CoreDataHelper.retrieveUser()
+    let locationManager = LocationManager()
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -26,9 +26,8 @@ class InteractionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        welcomeLabel.text = "Welcome back, \(user.username)"
-        locationLabel.text = "Your location is \(user.locationValue)"
+        locationManager.requestAlwaysAuthorization()
+        locationManager.determineCurrentLocation()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -57,7 +56,7 @@ class InteractionsViewController: UIViewController {
     
     @IBAction func updateLocationButtonTapped(_ sender: Any) {
         let databaseService = DatabaseService()
-        databaseService.postLocationValue(user)
+        databaseService.postLocationValue(user!)
     }
     
 }

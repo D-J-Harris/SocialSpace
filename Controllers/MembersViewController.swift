@@ -39,13 +39,15 @@ class MembersViewController: UIViewController {
             username = ""
         }
         
-        //save value to userDefaults
+        //save value to userDefaults and CoreData
         UserDefaults.standard.set(username, forKey: "username")
+        UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+        CoreDataHelper.newUser(username)
         
         //segue to new storyboard
         let storyboard = UIStoryboard(name: "Interaction", bundle: .main)
         if let initialViewController = storyboard.instantiateInitialViewController() {
-            UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+            
             self.view.window?.rootViewController = initialViewController
             self.view.window?.makeKeyAndVisible()
         }

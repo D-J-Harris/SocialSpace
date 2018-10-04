@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7D09548963F9C2713713F691 /* Pods_SocialSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */; };
+		BE054E5921664930008377C8 /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE054E56216648F1008377C8 /* User.xcdatamodeld */; };
 		BEB03BF62164DF6B0024741F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03BF52164DF6B0024741F /* LocationManager.swift */; };
 		BEB03BF82164E3180024741F /* HaversineDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03BF72164E3180024741F /* HaversineDistance.swift */; };
-		BEB03C8521652B840024741F /* UserDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEB03C6121652ADA0024741F /* UserDataModel.xcdatamodeld */; };
+		BEB03C8721652C020024741F /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03C8621652C020024741F /* CoreDataHelper.swift */; };
 		BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523A32162AEA200B67CF2 /* AppDelegate.swift */; };
 		BED523A92162AEA200B67CF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523A72162AEA200B67CF2 /* Main.storyboard */; };
 		BED523AB2162AEA300B67CF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BED523AA2162AEA300B67CF2 /* Assets.xcassets */; };
@@ -24,9 +25,10 @@
 
 /* Begin PBXFileReference section */
 		86F5724B1B9E81B0003214CF /* Pods-SocialSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace.release.xcconfig"; sourceTree = "<group>"; };
+		BE054E57216648F1008377C8 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
 		BEB03BF52164DF6B0024741F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BEB03BF72164E3180024741F /* HaversineDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaversineDistance.swift; sourceTree = "<group>"; };
-		BEB03C6221652ADA0024741F /* UserDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserDataModel.xcdatamodel; sourceTree = "<group>"; };
+		BEB03C8621652C020024741F /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		BED523A02162AEA200B67CF2 /* SocialSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED523A32162AEA200B67CF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BED523A82162AEA200B67CF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,7 +76,7 @@
 		BED523972162AEA200B67CF2 = {
 			isa = PBXGroup;
 			children = (
-				BEB03C6121652ADA0024741F /* UserDataModel.xcdatamodeld */,
+				BE054E56216648F1008377C8 /* User.xcdatamodeld */,
 				BED523A32162AEA200B67CF2 /* AppDelegate.swift */,
 				BED523C9216389C200B67CF2 /* Services */,
 				BED523BA2162AFCC00B67CF2 /* Helpers */,
@@ -128,6 +130,7 @@
 			children = (
 				BED523AA2162AEA300B67CF2 /* Assets.xcassets */,
 				BEB03BF72164E3180024741F /* HaversineDistance.swift */,
+				BEB03C8621652C020024741F /* CoreDataHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -135,8 +138,8 @@
 		BED523C9216389C200B67CF2 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				BED523CA216389D200B67CF2 /* LocationService.swift */,
 				BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */,
+				BED523CA216389D200B67CF2 /* LocationService.swift */,
 				BEB03BF52164DF6B0024741F /* LocationManager.swift */,
 			);
 			path = Services;
@@ -263,9 +266,10 @@
 				BEEBC2092163E87A0045ACA9 /* DatabaseService.swift in Sources */,
 				BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */,
 				BEB03BF82164E3180024741F /* HaversineDistance.swift in Sources */,
+				BE054E5921664930008377C8 /* User.xcdatamodeld in Sources */,
 				BEB03BF62164DF6B0024741F /* LocationManager.swift in Sources */,
 				BED523CB216389D200B67CF2 /* LocationService.swift in Sources */,
-				BEB03C8521652B840024741F /* UserDataModel.xcdatamodeld in Sources */,
+				BEB03C8721652C020024741F /* CoreDataHelper.swift in Sources */,
 				BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */,
 				BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */,
 			);
@@ -471,13 +475,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BEB03C6121652ADA0024741F /* UserDataModel.xcdatamodeld */ = {
+		BE054E56216648F1008377C8 /* User.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BEB03C6221652ADA0024741F /* UserDataModel.xcdatamodel */,
+				BE054E57216648F1008377C8 /* User.xcdatamodel */,
 			);
-			currentVersion = BEB03C6221652ADA0024741F /* UserDataModel.xcdatamodel */;
-			path = UserDataModel.xcdatamodeld;
+			currentVersion = BE054E57216648F1008377C8 /* User.xcdatamodel */;
+			path = User.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
