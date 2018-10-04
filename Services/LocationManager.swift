@@ -38,19 +38,25 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
             let la2 = location.coordinate.latitude
             let lo2 = location.coordinate.longitude
             
-            
-            
+            print(la2)
+            print(lo2)
+            print(HaversineDistance.haversineDistance(la1: 52.210662841796875, lo1: 0.11180670205418473, la2: la2, lo2: lo2))
+            guard let locationValue = user?.locationValue else { return }
             //check if the distance from house is above a threshold
-            if HaversineDistance.haversineDistance(la1: 52.211059, lo1: 0.113483, la2: la2, lo2: lo2) < 20 && user?.locationValue == 0 {
+            if HaversineDistance.haversineDistance(la1: 52.210662841796875, lo1: 0.11180670205418473, la2: la2, lo2: lo2) < 20 && locationValue == 0.0 {
+                
+                print("location value \(locationValue)")
                 
                 CoreDataHelper.updateUserLocationValue(1)
+                print("location of lat \(la2) lon \(lo2)")
                 
                 let databaseService = DatabaseService()
-                databaseService.postLocationValue(user!)
+                databaseService.postLocationValue(CoreDataHelper.retrieveUser()!)
                 
             }
-            else if HaversineDistance.haversineDistance(la1: 52.211059, lo1: 0.113483, la2: la2, lo2: lo2) > 20 && user?.locationValue == 1 {
+            else if HaversineDistance.haversineDistance(la1: 52.210662841796875, lo1: 0.11180670205418473, la2: la2, lo2: lo2) > 20 && user?.locationValue == 1.0 {
                 
+                print("____")
                 CoreDataHelper.updateUserLocationValue(0)
                 
                 let databaseService = DatabaseService()

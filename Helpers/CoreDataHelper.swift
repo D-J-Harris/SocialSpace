@@ -54,7 +54,7 @@ struct CoreDataHelper {
     }
     
     
-    static func updateUserLocationValue(_ locationValue: Int16) {
+    static func updateUserLocationValue(_ locationValue: Double) {
         
         if let user: User = retrieveUser() {
             user.locationValue = locationValue
