@@ -44,7 +44,6 @@ struct CoreDataHelper {
         do {
             let fetchRequest = NSFetchRequest<User>(entityName: "User")
             let results = try context.fetch(fetchRequest)
-            print(results)
             return results[0]
         } catch let error {
             print("Could not fetch \(error.localizedDescription)")

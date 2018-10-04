@@ -8,11 +8,11 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
-class InteractionsViewController: UIViewController {
+class InteractionsViewController: UIViewController, CLLocationManagerDelegate {
     
-    
-    var currentLocation: (Double,Double)?
+
     let user = CoreDataHelper.retrieveUser()
     let locationManager = LocationManager()
     
@@ -33,30 +33,18 @@ class InteractionsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    
-    @IBAction func pushLocationButtonTapped(_ sender: Any) {
-        //get current location using CoreLocation
-        let locationService = LocationService()
-        currentLocation = locationService.getCurrentLocation()
-        
-        //display result of current location
-        if currentLocation != nil {
-            locationLabel.text = "Your location is \(currentLocation!)"
-        }
-        else {
-            print("current location not found")
-        }
-    }
-    
     @IBAction func contactDatabaseButtonTouched(_ sender: Any) {
         
         let databaseService = DatabaseService()
+        //update this function to return the relevant dictionary for display and push notification
         databaseService.getLocationValues()
     }
     
     @IBAction func updateLocationButtonTapped(_ sender: Any) {
         let databaseService = DatabaseService()
         databaseService.postLocationValue(user!)
+        
+
     }
     
 }

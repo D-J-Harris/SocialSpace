@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D09548963F9C2713713F691 /* Pods_SocialSpace.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */; };
 		BE054E5921664930008377C8 /* User.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BE054E56216648F1008377C8 /* User.xcdatamodeld */; };
+		BE054E5B216682C3008377C8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE054E5A216682C3008377C8 /* Constants.swift */; };
 		BEB03BF62164DF6B0024741F /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03BF52164DF6B0024741F /* LocationManager.swift */; };
 		BEB03BF82164E3180024741F /* HaversineDistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03BF72164E3180024741F /* HaversineDistance.swift */; };
 		BEB03C8721652C020024741F /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB03C8621652C020024741F /* CoreDataHelper.swift */; };
@@ -19,13 +20,13 @@
 		BED523C02162B7A600B67CF2 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523BF2162B7A600B67CF2 /* MembersViewController.swift */; };
 		BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */; };
 		BED523C62162C96D00B67CF2 /* Interaction.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED523C52162C96D00B67CF2 /* Interaction.storyboard */; };
-		BED523CB216389D200B67CF2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED523CA216389D200B67CF2 /* LocationService.swift */; };
 		BEEBC2092163E87A0045ACA9 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		86F5724B1B9E81B0003214CF /* Pods-SocialSpace.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSpace.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace.release.xcconfig"; sourceTree = "<group>"; };
 		BE054E57216648F1008377C8 /* User.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = User.xcdatamodel; sourceTree = "<group>"; };
+		BE054E5A216682C3008377C8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BEB03BF52164DF6B0024741F /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		BEB03BF72164E3180024741F /* HaversineDistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaversineDistance.swift; sourceTree = "<group>"; };
 		BEB03C8621652C020024741F /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
@@ -38,7 +39,6 @@
 		BED523BF2162B7A600B67CF2 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		BED523C12162B9D900B67CF2 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
 		BED523C52162C96D00B67CF2 /* Interaction.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interaction.storyboard; sourceTree = "<group>"; };
-		BED523CA216389D200B67CF2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		C780903DD2C39C9A521AE637 /* Pods_SocialSpace.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialSpace.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C90AFEE4D934C12A1540708E /* Pods-SocialSpace.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialSpace.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialSpace/Pods-SocialSpace.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BED523AF2162AEA300B67CF2 /* Info.plist */,
+				BE054E5A216682C3008377C8 /* Constants.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -139,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				BEEBC2082163E87A0045ACA9 /* DatabaseService.swift */,
-				BED523CA216389D200B67CF2 /* LocationService.swift */,
 				BEB03BF52164DF6B0024741F /* LocationManager.swift */,
 			);
 			path = Services;
@@ -268,7 +268,7 @@
 				BEB03BF82164E3180024741F /* HaversineDistance.swift in Sources */,
 				BE054E5921664930008377C8 /* User.xcdatamodeld in Sources */,
 				BEB03BF62164DF6B0024741F /* LocationManager.swift in Sources */,
-				BED523CB216389D200B67CF2 /* LocationService.swift in Sources */,
+				BE054E5B216682C3008377C8 /* Constants.swift in Sources */,
 				BEB03C8721652C020024741F /* CoreDataHelper.swift in Sources */,
 				BED523A42162AEA200B67CF2 /* AppDelegate.swift in Sources */,
 				BED523C22162B9D900B67CF2 /* InteractionsViewController.swift in Sources */,

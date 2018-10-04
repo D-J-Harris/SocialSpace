@@ -17,14 +17,12 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     
     func determineCurrentLocation() {
         
-        //location manager setup
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.allowsBackgroundLocationUpdates = true
-        print("authorization Status: \(CLLocationManager.authorizationStatus().rawValue)")
         
         if CLLocationManager.locationServicesEnabled() {
-            locationManager.distanceFilter = 20
+            locationManager.distanceFilter = 50
             locationManager.startMonitoringSignificantLocationChanges()
 
         }
@@ -32,33 +30,28 @@ class LocationManager: CLLocationManager, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("new location received")
+        print("user value of \(user?.locationValue)")
         
         //get location when update is pinged
         if let location = manager.location {
-            let la2 = location.coordinate.latitude
-            let lo2 = location.coordinate.longitude
-            
-            print(la2)
-            print(lo2)
-            print(HaversineDistance.haversineDistance(la1: 52.210662841796875, lo1: 0.11180670205418473, la2: la2, lo2: lo2))
+
+
+            let distance = Constants.house.distance(from: location)
             guard let locationValue = user?.locationValue else { return }
+            
+            print(distance)
+            
             //check if the distance from house is above a threshold
-            if HaversineDistance.haversineDistance(la1: 52.210662841796875, lo1: 0.11180670205418473, la2: la2, lo2: lo2) < 20 && locationValue == 0.0 {
-                
-                print("location value \(locationValue)")
+            if distance < 100 && locationValue == 0.0 {
                 
                 CoreDataHelper.updateUserLocationValue(1)
-                print("location of lat \(la2) lon \(lo2)")
-                
                 let databaseService = DatabaseService()
                 databaseService.postLocationValue(CoreDataHelper.retrieveUser()!)
                 
             }
-            else if HaversineDistance.haversineDistance(la1: 52.210662841796875, lo1: 0.11180670205418473, la2: la2, lo2: lo2) > 20 && user?.locationValue == 1.0 {
+            else if distance > 100 && user?.locationValue == 1.0 {
                 
-                print("____")
                 CoreDataHelper.updateUserLocationValue(0)
-                
                 let databaseService = DatabaseService()
                 databaseService.postLocationValue(user!)
             }
